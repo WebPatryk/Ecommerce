@@ -32,10 +32,15 @@ namespace Ecommerce.Controllers
             games.Add(new Team { Title = "Risen 3: Władcy tytanów", Description = "Komputerowa gra fabularna, którą wyprodukowało studio Piranha Bytes.", Image = "https://gamedot.pl/uploads/media/user_upload/0001/28/2a581a63d89ac8b621c6e936a7fa64b77324ff7f.jpeg", Price = 15 });
             games.Add(new Team { Title = "Minecraft", Description = "komputerowa gra survivalowa o otwartym świecie stworzona przez Markusa Perssona i rozwijana przez Mojang Studios", Image = "https://bi.im-g.pl/im/92/a1/10/z17439634Q,Minecraft---okladka.jpg", Price = 47 });
 
-            int gamesLength;
+
             ViewBag.gamesLength = games.Count;
 
             return View(games);
+        }
+
+        public void AddToBasket(object sender, EventArgs e)
+        {
+            Console.WriteLine("Clicked");
         }
 
         public IActionResult Privacy()

@@ -37,13 +37,13 @@
 <div class="games-container">
     @foreach (var item in Model)
     {
-        <div class="card">
-            <img src="@item.Image" alt="Image" width="200">
-            <p class="title">@item.Title</p>
-            <p class="description">@item.Description</p>
-            <p class="price">$@item.Price</p>
-            <a href="#" class="button" data-id="1">Add to Card</a>
-        </div>
-     }
+    <div class="card">
+        <img src="@item.Image" alt="Image" width="200">
+        <p class="title">@item.Title</p>
+        <p class="description">@item.Description</p>
+        <p class="price">$@item.Price</p>
+        <button class="button" onserverClick="AddToBasket" runat="server"> Add to cart</button>
+</div>
+    }
     
 </div>
