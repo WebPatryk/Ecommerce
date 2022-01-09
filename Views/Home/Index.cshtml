@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Ecommerce.Models.Team>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<header>
+    <div class="container">
+        <a href="https://www.facebook.com/YoungLeosiaFanclub/" class="logo"><img src="https://www.lotto.pl/cdn/img/little-games-logo.4d91b2c.webp?fbclid=IwAR2gaPeOX8rTRpGL3Yf7bJBKh6sRKcDwN4rBQetH7sA6EkeRi_mUcGACp1Q" width="100" /></a>
+        <h3>Games shop (ecommerce)</h3>
+        <a href="#" class="bag">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="quantity">@ViewBag.gamesLength</span>
+        </a>
+    </div>
+</header>
+<div class="cart">
+    <a href="#" class="closecart"><i class="fas fa-times"></i></a>
+    <div id="minicart">
+        <table id="lista-carrito" class="u-full-width">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <a href="#" id="vaciar-carrito" class="button u-full-width">
+            Clean Cart <i class="far fa-trash-alt"></i>
+        </a>
+    </div>
+</div>
+<div class="games-container">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <img src="@item.Image" alt="Image" width="200">
+            <p class="title">@item.Title</p>
+            <p class="description">@item.Description</p>
+            <p class="price">$@item.Price</p>
+            <a href="#" class="button" data-id="1">Add to Card</a>
+        </div>
+     }
+    
+</div>
